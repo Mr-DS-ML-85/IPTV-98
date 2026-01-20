@@ -1,8 +1,8 @@
 # IPTV-98
-IPTV M#U
+IPTV M3U
 # An IPTV for everyone.
 
-![Banner]()
+![Banner](Banner.png)
 
 ##### stable working link 2000 + channels :
 ```
