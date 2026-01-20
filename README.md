@@ -2,6 +2,8 @@
 IPTV M#U
 # An IPTV for everyone.
 
+![Banner]()
+
 ##### stable working link 2000 + channels :
 ```
 https://iptv.devforge.qzz.io/playlist.m3u
@@ -10,7 +12,7 @@ https://iptv.devforge.qzz.io/playlist.m3u
  ```
 https://iptv.devforge.qzz.io/all.m3u
 ```
-#### Beta Channels with Errors and missing :
+#### Beta Channels with Errors and missing 2000 +:
 ```
 https://iptv.devforge.qzz.io/beta.m3u
 ```
