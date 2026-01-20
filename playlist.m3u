@@ -5251,3 +5251,11 @@ https://d24aqelmrau4kx.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68
 https://fl1.moveonjoy.com/Discovery_Science/index.m3u8
 #EXTINF:-1 tvg-id="" group-title="Kids" tvg-logo="",CineMan Marvel HD (1)
 http://myott.top/stream/DT6QU63K5VX/354.m3u8
+#EXTINF:-1 group-title="India",IN | Pogo (Hindi)
+http://103.68.28.58:5001/live/559.m3u8
+#EXTINF:-1 group-title="India",IN | Nickelodeon Sonic (Hindi)
+http://103.68.28.58:5001/live/815.m3u8
+#EXTINF:-1 group-title="India",IN | Cartoon Network HD+ (Multi-Audio)
+http://103.68.28.58:5001/live/1079.m3u8
+#EXTINF:-1 group-title="India",IN | Disney HD International
+http://suprino.xyz:80/PMF3J9X/BV7HG8H/694181
