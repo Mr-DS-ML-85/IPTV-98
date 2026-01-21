@@ -16,7 +16,7 @@ https://iptv.devforge.qzz.io/all.m3u
 ```
 https://iptv.devforge.qzz.io/beta.m3u
 ```
-#### Ultra Delux channels 8000+ (Might have errrors and missing channels) :
+#### Ultra Delux channels 80000+ (Might have errrors and missing channels) :
 ```
 https://iptv.devforge.qzz.io/ultra.m3u
 ```
