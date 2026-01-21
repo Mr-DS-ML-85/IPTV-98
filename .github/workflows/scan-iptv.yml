@@ -2,56 +2,53 @@ name: Scan IPTV hourly
 
 on:
   schedule:
-    - cron: "0 * * * *"   # every hour (UTC)
-  workflow_dispatch:      # manual trigger
+    - cron: "0 * * * *"   
+  workflow_dispatch:
 
 permissions:
-  contents: write         # allow committing back to the repo
+  contents: write
 
 jobs:
   run-scan:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout and setup
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0     # Fetch full history for git pull to work
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Install dependencies
-        working-directory: automated_scan
+      - name: Full scan and commit
         run: |
+          # Install dependencies
+          cd automated_scan
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-
-      - name: Run scan script
-        working-directory: automated_scan
-        run: |
-          chmod +x scan_iptv.sh
-          ./scan_iptv.sh
-
-      - name: Commit and push updated playlist
-        if: success()
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
-          # Pull latest changes first (handles concurrent pushes)
+          # Pull latest first
+          cd ..
           git pull --rebase
           
-          # Add the updated playlist file
-          git add playlist/playtv.m3u
+          # Run scan (creates playtv.m3u in playlist/)
+          cd automated_scan
+          chmod +x scan_iptv.sh
+          ./scan_iptv.sh
           
-          # Only commit if there are changes
+          # Commit everything
+          cd ..
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          
           if git diff --cached --quiet; then
-            echo "No playlist changes to commit."
+            echo "No changes to commit."
             exit 0
           fi
           
-          git commit -m "Update playtv.m3u from automated scan [$(date +%Y-%m-%d\ %H:%M)]"
+          git commit -m "Hourly IPTV scan [$(date +%Y-%m-%d\ %H:%M)]"
           git push origin HEAD:${{ github.ref_name }}
