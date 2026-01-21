@@ -2,7 +2,7 @@
 IPTV M3U
 # An IPTV for everyone.
 
-![Banner](Banner.png)
+![Banner](Assets/Banner.png)
 
 ##### stable working link 2000 + channels :
 ```
