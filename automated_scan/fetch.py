@@ -29,11 +29,11 @@ from scrapers.utils import get_logger, network
 
 log = get_logger(__name__)
 
-BASE_FILE = final  / "base.m3u8"
+BASE_FILE = Path(__file__).parent / "base.m3u8"
 
-EVENTS_FILE = final / "events.m3u8"
+EVENTS_FILE = Path(__file__).parent / "events.m3u8"
 
-COMBINED_FILE = final  / "TV.m3u8"
+COMBINED_FILE = collect  / "TV.m3u8"
 
 
 def load_base() -> tuple[list[str], int]:
