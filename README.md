@@ -26,7 +26,7 @@ https://iptv.devforge.qzz.io/playlist/tv.m3u
 ```
 ## Most stable and updated via automated script in every 1 hour (It might also have channels missing cause of DMCA takedown and also some errors with the channels)
 ```
-iptv.devforge.qzz.io/playlist/playtv.m3u
+https://iptv.devforge.qzz.io/playlist/playtv.m3u
 ```
 ## ⚠️ Disclaimer :
 #### These are collected from public DBs and URLs. We don't host any of these channels. For DMCA takedown mail at devforgeplayer365@protonmail.com
