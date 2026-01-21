@@ -8,7 +8,7 @@ OUTPUT_FILE = "collect/playlist.m3u"
 
 REMOVE_DUPLICATES = False
 MAX_THREADS = 200
-TIMEOUT = 30
+TIMEOUT = 60
 
 session = requests.Session()
 session.headers.update({"User-Agent": "IPTV-Merger/3.0"})
