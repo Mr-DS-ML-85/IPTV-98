@@ -9,7 +9,7 @@ python3 ultra-iptv.py
 python3 rm-dupe.py collect/
 python3 m3u-vaildator.py collect/playlist_dedup.m3u
 # validate everything in collect, write to final, use ffprobe
-python3 vaildator.py collect --outdir final --ffprobe
+python3 validator.py collect --outdir final --ffprobe
 python3 merge_playlists.py collect/playtv.m3u collect/working.m3u collect/maybe.m3u --output final/playtv.m3u
 python3 m3u-dedupe.py final/
 rm -rf playtv.m3u
