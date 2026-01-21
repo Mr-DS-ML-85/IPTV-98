@@ -5,13 +5,12 @@ on:
     - cron: "0 * * * *"   # every hour (UTC)
   workflow_dispatch:      # manual trigger
 
+permissions:
+  contents: write         # allow committing back to the repo
+
 jobs:
   run-scan:
     runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        working-directory: automated_scan
 
     steps:
       - name: Checkout repo
@@ -23,11 +22,32 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
+        working-directory: automated_scan
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Run scan script
+        working-directory: automated_scan
         run: |
           chmod +x scan_iptv.sh
           ./scan_iptv.sh
+
+      - name: Commit and push updated playlist
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Add the updated playlist file (adjust if other files are also changed)
+          git add playlist/playtv.m3u
+
+          # Only commit if there are changes
+          if git diff --cached --quiet; then
+            echo "No playlist changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Update playtv.m3u from automated scan"
+          git push origin "${GITHUB_REF_NAME}"
+
