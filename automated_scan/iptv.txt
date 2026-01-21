@@ -44,3 +44,4 @@ https://github.com/iptv-org/iptv/blob/master/streams/in_samsung.m3u
 https://github.com/iptv-org/iptv/blob/master/streams/bd.m3u
 https://raw.githubusercontent.com/freearhey/iptv/master/channels/in.m3u
 https://raw.githubusercontent.com/freearhey/iptv/master/channels/us.m3u
+https://github.com/hmripon66/Indian-hindi-IPTV-by-Tech-Edu-Byte/blob/main/indian%20hindi

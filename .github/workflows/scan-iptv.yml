@@ -2,11 +2,11 @@ name: Scan IPTV hourly + iptv.txt changes
 
 on:
   schedule:
-    - cron: "0 * * * *"   # every hour (UTC)
+    - cron: "0 * * * *"
   push:
     paths:
-      - 'automated_scan/iptv.txt'  # trigger when iptv.txt changes
-  workflow_dispatch:      # manual trigger
+      - 'automated_scan/iptv.txt'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout and setup
+      - name: Checkout repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -26,33 +26,29 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Full scan and commit
+      - name: Install dependencies
+        working-directory: automated_scan
         run: |
-          # Install dependencies
-          cd automated_scan
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          
-          # Pull latest first (handles concurrent pushes)
-          cd ..
-          git pull --rebase
-          
-          # Run scan (creates playtv.m3u in playlist/)
-          cd automated_scan
+
+      - name: Run scan script
+        working-directory: automated_scan
+        run: |
           chmod +x scan_iptv.sh
           ./scan_iptv.sh
-          
-          # Commit everything that changed
-          cd ..
+
+      - name: Commit and push
+        if: success()
+        run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
+          git pull --rebase
           git add .
           if git diff --cached --quiet; then
-            echo "No changes to commit."
+            echo "No changes to commit"
             exit 0
           fi
-          
-          git commit -m "IPTV scan [$(date +%Y-%m-%d\ %H:%M)]$([[ ${{ github.event_name }} == 'push' ]] && echo ' (triggered by iptv.txt update)')"
+          git commit -m "IPTV scan [$(date +%Y-%m-%d\ %H:%M)]"
           git push origin HEAD:${{ github.ref_name }}
 
