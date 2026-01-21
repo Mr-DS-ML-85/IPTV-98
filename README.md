@@ -20,7 +20,7 @@ https://iptv.devforge.qzz.io/beta.m3u
 ```
 https://iptv.devforge.qzz.io/ultra.m3u
 ```
-#### Most stable (Some Channels Might Down cause of DMCA)
+#### Good (Some Channels Might Down cause of DMCA)
 ```
 https://iptv.devforge.qzz.io/tv.m3u
 
