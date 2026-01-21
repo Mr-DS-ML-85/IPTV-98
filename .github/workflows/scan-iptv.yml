@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0     # Fetch full history for git pull to work
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -38,16 +40,18 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          # Add the updated playlist file (adjust if other files are also changed)
+          
+          # Pull latest changes first (handles concurrent pushes)
+          git pull --rebase
+          
+          # Add the updated playlist file
           git add playlist/playtv.m3u
-
+          
           # Only commit if there are changes
           if git diff --cached --quiet; then
             echo "No playlist changes to commit."
             exit 0
           fi
-
-          git commit -m "Update playtv.m3u from automated scan"
-          git push origin "${GITHUB_REF_NAME}"
-
+          
+          git commit -m "Update playtv.m3u from automated scan [$(date +%Y-%m-%d\ %H:%M)]"
+          git push origin HEAD:${{ github.ref_name }}
