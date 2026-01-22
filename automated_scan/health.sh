@@ -1,7 +1,7 @@
 #!/bin/bash
 base_file="./M3U8/base.m3u8"
 UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
-MAX_JOBS=10
+MAX_JOBS=200
 RETRY_COUNT=3
 README="./healthcheck.md"
 STATUSLOG=$(mktemp)
