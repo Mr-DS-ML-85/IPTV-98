@@ -5,7 +5,6 @@ aiohttp
 async-timeout
 feedparser>=6.0.12
 httpx[http2]>=0.28.1
-playwright
 pytz>=2025.2
 selectolax>=0.4.0
-
+playwright
