@@ -37,16 +37,55 @@ IPTV-98/
 │   └── img
 │       └── Banner.png
 ├── automated_scan
+│   ├── base.m3u8
 │   ├── collect
+│   │   ├── test1.m3u
+│   │   └── test2.m3u
+│   ├── events.m3u8
+│   ├── fetch.py
 │   ├── final
 │   │   └── test_case.md
+│   ├── health.sh
 │   ├── iptv.txt
 │   ├── m3u-vaildator.py
+│   ├── merge_playlists.py
 │   ├── merger.py
 │   ├── requirements.txt
 │   ├── rm-dupe.py
 │   ├── scan_iptv.sh
-│   └── ultra-iptv.py
+│   ├── scrapers
+│   │   ├── cdnlivetv.py
+│   │   ├── embedhd.py
+│   │   ├── fawa.py
+│   │   ├── istreameast.py
+│   │   ├── pawa.py
+│   │   ├── pixel.py
+│   │   ├── ppv.py
+│   │   ├── __pycache__
+│   │   │   └── cdnlivetv.cpython-312.pyc
+│   │   ├── roxie.py
+│   │   ├── shark.py
+│   │   ├── sport9.py
+│   │   ├── streambtw.py
+│   │   ├── streamcenter.py
+│   │   ├── streamfree.py
+│   │   ├── streamhub.py
+│   │   ├── streamsgate.py
+│   │   ├── strmd.py
+│   │   ├── totalsportek.py
+│   │   ├── tvpass.py
+│   │   ├── utils
+│   │   │   ├── caching.py
+│   │   │   ├── config.py
+│   │   │   ├── __init__.py
+│   │   │   ├── leagues.json
+│   │   │   ├── logger.py
+│   │   │   └── webwork.py
+│   │   ├── watchfooty.py
+│   │   └── webcast.py
+│   ├── TV.m3u8
+│   ├── ultra-iptv.py
+│   └── validator.py
 ├── CNAME
 ├── LICENSE
 ├── playlist
