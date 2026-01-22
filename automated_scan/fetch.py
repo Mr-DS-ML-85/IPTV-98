@@ -33,6 +33,8 @@ BASE_FILE = Path(__file__).parent / "base.m3u8"
 
 EVENTS_FILE = Path(__file__).parent / "events.m3u8"
 
+collect = Path("collect/")
+
 COMBINED_FILE = collect  / "TV.m3u8"
 
 
