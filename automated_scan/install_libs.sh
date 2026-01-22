@@ -1,47 +1,41 @@
 #!/usr/bin/env bash
 set -e
 
-echo "Updating package lists..."
+echo "--- Updating apt lists ---"
 sudo apt-get update -y
 
-echo "Installing required system libraries for Playwright and your IPTV scraper..."
+echo "--- Installing Playwright system dependencies ---"
 sudo apt-get install -y \
-  libgtk-4-1 \
-  libgraphene-1.0-0 \
-  libwoff2-1 \
-  libvpx9 \
-  libevent-2.1-7 \
+  libgtk‑4‑1t64 \
+  libgtk‑3‑0t64 \
+  libasound2t64 \
+  libevent‑2.1‑7t64 \
   libopus0 \
-  gstreamer1.0-plugins-base \
-  gstreamer1.0-plugins-good \
-  gstreamer1.0-plugins-bad \
-  gstreamer1.0-plugins-ugly \
-  gstreamer1.0-libav \
-  gstreamer1.0-tools \
-  flite \
-  libavif16 \
-  libharfbuzz-icu0 \
-  libsecret-1-0 \
+  libvpx9 \
+  libharfbuzz‑icu0 \
+  libsecret‑1‑0 \
   libhyphen0 \
-  libgles2-mesa \
-  libx264-163 \
-  wget curl unzip \
-  fonts-liberation \
-  libnss3 \
+  libxrandr2 \
   libxss1 \
-  libasound2 \
-  libatk-bridge2.0-0 \
-  libgtk-3-0 \
+  libnss3 \
   libxcomposite1 \
   libxcursor1 \
   libxdamage1 \
   libxi6 \
   libxtst6 \
-  libxrandr2 \
-  libgbm1
+  libgbm1 \
+  gstreamer1.0‑plugins‑base \
+  gstreamer1.0‑plugins‑good \
+  gstreamer1.0‑plugins‑bad \
+  gstreamer1.0‑plugins‑ugly \
+  gstreamer1.0‑libav \
+  wget curl unzip fonts‑liberation
 
-echo "All required system libraries are installed."
+echo "--- Optional: Installing woff2 (font compression) ---"
+# This installs the woff2 utility package
+sudo apt-get install -y woff2 || echo "woff2 not found, skipping"
 
-# Optional: Install Python packages and Playwright browsers
-playwright install
-# echo "Playwright browsers installed."
+echo ""
+echo "✔ System dependencies installed."
+echo "Now run: python -m playwright install"
+python -m playwright install
