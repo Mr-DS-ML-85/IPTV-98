@@ -6,9 +6,11 @@ cd "$(dirname "$0")"
 
 # 1) Run the pipeline
 bash install_libs.sh
+./health.sh
+python3 fetch.py
 python3 ultra-iptv.py
-python3 rm-dupe.py collect/
-python3 m3u-vaildator.py collect/playlist_dedup.m3u
+python3 rm-dupe.py collect/playlist.m3u
+python3 url_checker.py
 python m3u_merger.py collect/play.m3u collect/TV.m3u playtv.m3u --threads=300
 # validate everything in collect, write to final, use ffprobe
 echo "Scraping and building m3u file done successfully filename: playtv.m3u in final"
