@@ -5,7 +5,7 @@ set -e
 cd "$(dirname "$0")"
 
 # 1) Run the pipeline
-install_libs.sh
+bash install_libs.sh
 python3 ultra-iptv.py
 python3 rm-dupe.py collect/
 python3 m3u-vaildator.py collect/playlist_dedup.m3u
