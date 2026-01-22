@@ -5,6 +5,7 @@ set -e
 cd "$(dirname "$0")"
 
 # 1) Run the pipeline
+playwright install
 python3 ultra-iptv.py
 python3 rm-dupe.py collect/
 python3 m3u-vaildator.py collect/playlist_dedup.m3u
