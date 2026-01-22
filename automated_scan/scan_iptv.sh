@@ -15,8 +15,9 @@ echo "Scraping and building m3u file done successfully filename: playtv.m3u in f
 
 # 2) Post‑processing:
 # 2a) Clean collect folder
-rm -f collect/*
-
+cd collect
+rm -rf *
+cd ..
 # 2b) Move final/playtv.m3u to ../playlist, replacing old one
 if [ -f final/play.m3u ]; then
     rm -f ../playlist/playtv.m3u
