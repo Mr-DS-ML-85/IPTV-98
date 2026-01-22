@@ -10,7 +10,7 @@ python3 ultra-iptv.py
 python3 rm-dupe.py collect/
 python3 m3u-vaildator.py collect/playlist_dedup.m3u
 # validate everything in collect, write to final, use ffprobe
-python3 m3u_auto_fix.py -i final/play.m3u -o final/playtv.m3u
+python3 m3u-autofix.py -i final/play.m3u -o final/playtv.m3u
 echo "Scraping and building m3u file done successfully filename: playtv.m3u in final"
 
 # 2) Post‑processing:
