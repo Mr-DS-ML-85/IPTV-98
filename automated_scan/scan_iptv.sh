@@ -10,7 +10,8 @@ python3 rm-dupe.py collect/
 python3 m3u-vaildator.py collect/playlist_dedup.m3u
 # validate everything in collect, write to final, use ffprobe
 bash health.sh
-python3 merger.py TV.m3u8 final/play.m3u final/playtv.m3u
+python3 merger.py TV.m3u8 final/play.m3u final/playmk.m3u
+python3 m3u_auto_fix.py -i playmk.m3u -o playtv.m3u
 echo "Scraping and building m3u file done successfully filename: playtv.m3u in final"
 
 # 2) Post‑processing:
