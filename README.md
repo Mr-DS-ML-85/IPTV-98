@@ -104,5 +104,10 @@ IPTV-98/
 #### These are collected from public DBs and URLs. We don't host any of these channels. For DMCA takedown mail at devforgeplayer365@protonmail.com
 #### Also these M3U files are filtered with python by combining and removing same urls and taking all urls as unique. and also they are vaildated via python filters to ensure all are valid so if you find some are not working consider using  ```stable```,``` beta ``` and ``` Filtered ``` Channels in VLC or Kodi
 
+## Credits :
+#### Secondary scanner code taken from
+doms9@gitlab:https://gitlab.com/doms9
+doms9@github:https://github.com/doms9
+doms9@forgejo:https://forgejo.mxnticek.eu/doms
 
 
