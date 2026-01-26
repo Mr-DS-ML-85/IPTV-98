@@ -7,7 +7,7 @@ from urllib.parse import urljoin
 
 # ------------- CONFIG -------------
 INPUT_FILE = "collect/playlist_dedup.m3u"
-OUTPUT_FILE = "final/play.m3u"
+OUTPUT_FILE = "final/playtv.m3u"
 TIMEOUT = 10.0          # Increased for stability
 MAX_THREADS = 300       # Lowered slightly to avoid IP bans from servers
 # ----------------------------------
