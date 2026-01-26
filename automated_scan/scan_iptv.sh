@@ -8,7 +8,6 @@ cd "$(dirname "$0")"
 python3 ultra-iptv.py
 python3 rm-dupe.py collect/playlist.m3u
 python3 url_checker.py
-python m3u_merger.py collect/play.m3u collect/TV.m3u playtv.m3u --threads=300
 # validate everything in collect, write to final, use ffprobe
 echo "Scraping and building m3u file done successfully filename: playtv.m3u in final"
 sudo rm collect/*.m3u
