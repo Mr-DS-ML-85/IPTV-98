@@ -4,7 +4,7 @@ from urllib.parse import urljoin
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 INPUT_FILE = "iptv.txt"
-OUTPUT_FILE = "collect/playlist.m3u"
+OUTPUT_FILE = "collect/play.m3u"
 
 REMOVE_DUPLICATES = False
 MAX_THREADS = 200
