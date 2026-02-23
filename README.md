@@ -101,7 +101,7 @@ IPTV-98/
 ```
 
 ## ⚠️ Disclaimer :
-#### These are collected from public DBs and URLs. We don't host any of these channels. For DMCA takedown mail at devforgeplayer365@protonmail.com
+#### These are collected from public DBs and URLs. We don't host any of these channels. For DMCA takedown mail at mr-ds-ml-85@devforge.qzz.io
 #### Also these M3U files are filtered with python by combining and removing same urls and taking all urls as unique. and also they are vaildated via python filters to ensure all are valid so if you find some are not working consider using  ```stable```,``` beta ``` and ``` Filtered ``` Channels in VLC or Kodi
 
 
