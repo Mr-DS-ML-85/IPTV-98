@@ -21,7 +21,7 @@ from termcolor import colored
 
 # ------------- CONFIG -------------
 # You may edit these defaults at the top of the file.
-DEFAULT_INPUTS = ["collect/playlist_dedup.m3u"]   # tried in order if no args provided
+DEFAULT_INPUTS = ["collect/adult_links.m3u"]   # tried in order if no args provided
 OUTPUT_FILE = "final/play.m3u"         # final output file written if there are valid streams
 BLACKLIST_FILE = ""                          # set to "blacklist.txt" to use a blacklist
 DEBUG = False                                # set True to enable debug prints

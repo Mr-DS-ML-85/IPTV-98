@@ -28,7 +28,7 @@ from urllib.parse import urlparse, urljoin
 # -----------------------
 # DEFAULT CONFIG (edit at top)
 # -----------------------
-DEFAULT_INPUTS = ["collect/playlist.m3u"]
+DEFAULT_INPUTS = ["collect/adult_links.m3u"]
 DEFAULT_OUTPUT = "final/playtv.m3u"
 DEFAULT_CSV = None  # if None -> output_path + ".csv"
 DEFAULT_TIMEOUT = 7.0
